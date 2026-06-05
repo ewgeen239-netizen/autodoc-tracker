@@ -41,9 +41,3 @@ def send(m):
         c.execute("REPLACE INTO shifts VALUES (?,?,?,?,?,?)", (date, emp, station, pieces, hours, bonus))
         conn.commit()
         bot.reply_to(m, f"✅ {date} | {station} | {pieces}п | {hours}ч | +{bonus}zł")
-    except:
-        bot.reply_to(m, "Формат: /send пики часы [станция] [YYYY-MM-DD]")
-
-@bot.message_handler(commands=['stats'])
-def stats(m):
-    c.execute("SELECT SUM(pieces), SUM(hours), SUM(bonus) FROM shifts WHERE date >= date('
