@@ -46,8 +46,4 @@ def send(m):
 
 @bot.message_handler(commands=['stats'])
 def stats(m):
-    c.execute("SELECT SUM(pieces), SUM(hours), SUM(bonus) FROM shifts WHERE date >= date('now', '-30 day')")
-    res = c.fetchone()
-    bot.reply_to(m, f"30 дней:\nПики: {res[0] or 0}\nЧасы: {res[1]:.1f}\nПремия: {res[2]:.2f}zł")
-
-bot.infinity_polling()
+    c.execute("SELECT SUM(pieces), SUM(hours), SUM(bonus) FROM shifts WHERE date >= date('
