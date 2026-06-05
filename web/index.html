@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDoc OS Tracker</title>
+    <style>body{font-family:sans-serif;background:#000;color:#fff;padding:20px;text-align:center;}</style>
+</head>
+<body>
+    <h2>AutoDoc OS Tracker</h2>
+    <input type="date" id="date"><br><br>
+    <input type="number" id="pieces" placeholder="Пики"><br><br>
+    <input type="number" id="hours" step="0.1" placeholder="Часы"><br><br>
+    <select id="station">
+        <option value="M13">M13 Outbound</option>
+        <option value="Other">Другая станция</option>
+    </select><br><br>
+    <button onclick="sendData()">Отправить смену</button>
+    <p id="result"></p>
+    <script src="app.js"></script>
+</body>
+</html>
